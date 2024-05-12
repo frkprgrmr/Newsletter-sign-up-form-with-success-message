@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: unset;
+    width: 100%;
+  }
+
+  .form-container {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    border-radius: unset !important;
+    padding: unset !important;
+    gap: 0 !important;
+  }
+
+  .form-container img {
+    content: url("./assets/images/illustration-sign-up-mobile.svg");
+  }
+
+  .form-container div[id="form-wrapper"] {
+    padding: 0 15px 0px !important;
+  }
+
+  h1 {
+    text-align: left !important;
+    margin: 10px 0 0 0 !important;
+  }
+
+  .modal-content {
+    border-radius: unset !important;
+    height: 90% !important;
+    margin: unset !important;
+    border: unset !important;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 16px;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Roboto Bold";
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Roboto Bold";
+}
+
+.font-bold {
+  font-family: "Roboto Bold";
+}
+
+.bg-gradient {
+  background: rgb(232, 85, 85);
+  background: linear-gradient(
+    90deg,
+    hsl(4, 100%, 67%) 0%,
+    rgba(230, 102, 38, 1) 100%
+  );
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.form-container input[type="email"] {
+  padding: 15px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-container div[id="form-wrapper"] {
+  padding: 40px 15px 40px;
+}
+
+button {
+  padding: 15px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: hsl(234, 29%, 20%);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: rgb(232, 85, 85);
+  background: linear-gradient(
+    90deg,
+    rgba(232, 85, 85, 1) 0%,
+    rgba(230, 102, 38, 1) 100%
+  );
+}
+.checked-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0px;
+}
+
+.checked-list li {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checked-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  position: absolute;
+}
+
+.circle-icon {
+  width: 23px;
+  height: 23px;
+  background-color: rgb(255, 102, 0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 40px 50px 40px;
+  border: 1px solid #888;
+  max-width: 400px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
