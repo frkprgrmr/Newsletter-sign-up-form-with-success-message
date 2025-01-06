@@ -1,33 +1,29 @@
 document
   .getElementById("newsletter-form")
-  .addEventListener("submit", function (event) {
-    var emailInput = document.getElementById("email");
-    var email = document.getElementById("email").value;
+  .addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
 
-    var errorMessage = document.getElementById("error-msg");
-    var inputedEmail = document.getElementById("inputed-email");
+    const emailInput = document.getElementById("email");
+    const errorMsg = document.getElementById("error-msg");
+    const email = emailInput.value.trim();
 
-    var modal = document.getElementById("success-modal");
-    var dismissBtn = document.getElementById("dismiss-message");
+    // Regex for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailInput.checkValidity() || emailInput.value.trim() === "") {
-      errorMessage.textContent = "Valid email required";
-      event.preventDefault();
+    if (!email) {
+      errorMsg.textContent = "Email address is required.";
+    } else if (!emailRegex.test(email)) {
+      errorMsg.textContent = "Please enter a valid email address.";
     } else {
-      errorMessage.textContent = "";
-      event.preventDefault();
-
-      modal.style.display = "block";
-      inputedEmail.textContent = email;
+      errorMsg.textContent = "";
+      document.getElementById("inputed-email").textContent = email;
+      document.getElementById("success-modal").style.display = "block";
     }
+  });
 
-    dismissBtn.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
+// Dismiss the success message
+document
+  .getElementById("dismiss-message")
+  .addEventListener("click", function () {
+    document.getElementById("success-modal").style.display = "none";
   });
